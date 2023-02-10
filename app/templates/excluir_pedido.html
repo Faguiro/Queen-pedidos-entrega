@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Deseja excluir o seguinte pedido?</h1>
+<p>ID: {{ pedido.id }}</p>
+<p>Cliente: {{ pedido.cliente.nome }}</p>
+<p>Entregador: {{ pedido.entregador.nome }}</p>
+<p>Endereço de Entrega: {{ pedido.endereco_entrega }}</p>
+<p>Data de Entrega: {{ pedido.data_entrega }}</p>
+<p>Status: {{ pedido.status }}</p>
+<form action="{{ url_for('excluir_pedido') }}" method="post">
+    <input type="hidden" name="pedido_id" value="{{ pedido.id }}" >
+    <input type="submit" value="Excluir">
+</form>
+{% endblock %}
+

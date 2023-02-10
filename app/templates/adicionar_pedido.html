@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{{ url_for('adicionar_pedido') }}" method="post">
+    <label>Cliente:</label>
+    <select name="cliente_id">
+        {% for cliente in clientes %}
+        <option value="{{ cliente.id }}">{{ cliente.nome }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <label>Entregador:</label>
+    <select name="entregador_id">
+        {% for entregador in entregadores %}
+        <option value="{{ entregador.id }}">{{ entregador.nome }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <label>Endereço de Entrega:</label>
+    <input type="text" name="endereco_entrega">
+    <br>
+    <label>Data de Entrega:</label>
+    <input type="datetime-local" name="data_entrega">
+    <br>
+    <label>Status:</label>
+    <input type="text" name="status">
+    <br>
+    <input type="submit" value="Adicionar">
+</form>
+{% endblock %}

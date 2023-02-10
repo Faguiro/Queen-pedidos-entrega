@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+  {% if title %}
+  <title>{{ title }} - delivery</title>
+  {% else %}
+  <title>Welcome to delivery</title>
+  {% endif %}
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <style>
+  </style>
+</head>
+
+<body>
+  <div>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          {% if current_user.is_anonymous %}
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+          {% else %}
+          <li><a href="{{ url_for('listar_pedidos') }}">Listar Pedidos</a></li>
+          <li><a href="{{ url_for('adicionar_pedido') }}">Adicionar Pedido</a></li>
+        </ul>
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('listar_entregadores') }}">Listar Entregadores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('adicionar_entregador') }}">Cadastrar Entregador</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('clientes') }}">Listar Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('novo_cliente') }}">Cadastrar Cliente</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link"
+              href="{{ url_for('user', username=current_user.username) }}">Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+        {% endif %}
+      </nav>
+    </header>
+
+
+  </div>
+  <hr>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+
+</body>
+
+</html>

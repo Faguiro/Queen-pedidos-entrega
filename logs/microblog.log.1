@@ -1,0 +1,99 @@
+2023-02-09 14:44:24,367 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 14:45:13,901 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 14:45:17,051 ERROR: Exception on / [GET] [in C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\engine\default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1818, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 2309, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "C:\Users\fenix\Desktop\delivery-01\app\routes.py", line 12, in before_request
+    if current_user.is_authenticated:
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\werkzeug\local.py", line 316, in __get__
+    obj = instance._get_current_object()  # type: ignore[misc]
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\werkzeug\local.py", line 520, in _get_current_object
+    return get_name(local())  # type: ignore
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask_login\utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask_login\utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask_login\login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "C:\Users\fenix\Desktop\delivery-01\app\models.py", line 34, in load_user
+    return User.query.get(int(id))
+  File "<string>", line 2, in get
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\util\deprecations.py", line 383, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1135, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1144, in _get_impl
+    return self.session._get_impl(
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3657, in _get_impl
+    return db_load_fn(
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 666, in load_on_pk_identity
+    session.execute(
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2229, in execute
+    return self._execute_internal(
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\orm\context.py", line 252, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1414, in execute
+    return meth(
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 489, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\sqlalchemy\engine\default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
+FROM user 
+WHERE user.id = ?]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2023-02-09 14:45:38,250 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 14:45:46,779 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 14:45:51,216 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 14:49:22,349 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 14:49:34,450 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 14:49:44,591 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 14:51:15,943 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 14:53:50,551 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 14:54:15,181 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 14:54:52,550 ERROR: Exception on /clientes/ [GET] [in C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\fenix\Desktop\delivery-01\app\routes.py", line 101, in clientes
+    clientes = Cliente.query.all()
+NameError: name 'Cliente' is not defined
+2023-02-09 14:56:21,029 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 17:43:37,708 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 17:46:30,303 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]

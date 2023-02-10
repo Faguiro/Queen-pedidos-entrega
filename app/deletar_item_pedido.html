@@ -1,0 +1,6 @@
+<h1>Deletar Item Pedido</h1>
+<form action="{{ url_for('deletar_item_pedido', item_pedido_id=item_pedido.id) }}" method="POST">
+    <p>Você realmente deseja deletar o item pedido "{{ item_pedido.descricao }}"?</p>
+    <input type="submit" value="Sim">
+    <a href="{{ url_for('listar_itens_pedido', pedido_id=item_pedido.pedido_id) }}">Não</a>
+</form>

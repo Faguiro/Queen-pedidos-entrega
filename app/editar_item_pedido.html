@@ -1,0 +1,15 @@
+<h1>Editar Item de Pedido</h1>
+    <form action="{{ url_for('editar_item_pedido', item_id=item.id) }}" method="POST">
+      <input type="hidden" name="item_id" value="{{ item.id }}">
+      <p>
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" value="{{ item.descricao }}">
+      </p>
+      <p>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" name="quantidade" value="{{ item.quantidade }}">
+      </p>
+      <p>
+        <input type="submit" value="Salvar">
+      </p>
+    </form>

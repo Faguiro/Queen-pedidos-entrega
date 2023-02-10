@@ -1,0 +1,7 @@
+
+<h1>Deletar entregador</h1>
+<p>Você tem certeza que deseja deletar o entregador {{ entregador.nome }}?</p>
+<form action="{{ url_for('deletar_entregador', id=entregador.id) }}" method="post">
+  <input type="submit" value="Sim">
+  <a href="{{ url_for('listar_entregadores') }}">Não</a>
+</form>

@@ -1,0 +1,92 @@
+2023-02-09 17:46:36,170 ERROR: Exception on /clientes/ [GET] [in C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\fenix\Desktop\delivery-01\app\routes.py", line 104, in clientes
+    return render_template('clientes.html', clientes=clientes)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\fenix\Desktop\delivery-01\app\templates\clientes.html", line 22, in template
+    <td>{{ <i class="fa fa-trash" ></i> }}</td>
+jinja2.exceptions.TemplateSyntaxError: unexpected '<'
+2023-02-09 17:46:37,632 ERROR: Exception on /clientes/ [GET] [in C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\fenix\Desktop\delivery-01\app\routes.py", line 104, in clientes
+    return render_template('clientes.html', clientes=clientes)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\fenix\Desktop\delivery-01\app\templates\clientes.html", line 22, in template
+    <td>{{ <i class="fa fa-trash" ></i> }}</td>
+jinja2.exceptions.TemplateSyntaxError: unexpected '<'
+2023-02-09 17:46:38,788 ERROR: Exception on /clientes/ [GET] [in C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\fenix\Desktop\delivery-01\app\routes.py", line 104, in clientes
+    return render_template('clientes.html', clientes=clientes)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\flask\templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "C:\Users\fenix\Desktop\delivery-01\venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\fenix\Desktop\delivery-01\app\templates\clientes.html", line 22, in template
+    <td>{{ <i class="fa fa-trash" ></i> }}</td>
+jinja2.exceptions.TemplateSyntaxError: unexpected '<'
+2023-02-09 17:47:08,236 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 17:49:17,178 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 17:53:57,470 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 17:57:49,974 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]
+2023-02-09 18:00:19,045 INFO: delivery startup [in C:\Users\fenix\Desktop\delivery-01\app\__init__.py:43]

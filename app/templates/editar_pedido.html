@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<form action="{{ url_for('editar_pedido') }}" method="post">
+    <input type="hidden" name="pedido_id" value="{{ pedido.id }}">
+    <label>Cliente:</label>
+    <select name="cliente_id">
+        {% for cliente in clientes %}
+        <option value="{{ cliente.id }}" {% if cliente.id == pedido.cliente_id %}selected{% endif %}>{{ cliente.nome }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <label>Entregador:</label>
+    <select name="entregador_id">
+        {% for entregador in entregadores %}
+        <option value="{{ entregador.id }}" {% if entregador.id == pedido.entregador_id %}selected{% endif %}>{{ entregador.nome }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <label>Endereço de Entrega:</label>
+    <input type="text" name="endereco_entrega" value="{{ pedido.endereco_entrega }}">
+    <br>
+    <label>Data de Entrega:</label>
+    <input type="datetime-local" name="data_entrega" value="{{ pedido.data_entrega }}">
+    <br>
+    <label>Status:</label>
+    <input type="text" name="status" value="{{ pedido.status }}">
+    <br>
+    <input type="submit" value="Editar">
+</form>
+
+{% endblock %}

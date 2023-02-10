@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Lista de Entregadores</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Disponibilidade</th>
+        <th>Ações</th>
+    </tr>
+    {% for entregador in entregadores %}
+    <tr>
+        <td>{{ entregador.id }}</td>
+        <td>{{ entregador.nome }}</td>
+        <td>{{ entregador.telefone }}</td>
+        <td>{{ entregador.disponibilidade }}</td>
+        <td>
+            <a href="{{ url_for('adicionar_entregador', id=entregador.id) }}">Exibir</a> |
+            <a href="{{ url_for('editar_entregador', id=entregador.id) }}">Editar</a> |
+            <a href="{{ url_for('deletar_entregador', id=entregador.id) }}">Excluir</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<a href="{{ url_for('adicionar_entregador') }}">Adicionar novo entregador</a>
+
+
+{% endblock %}

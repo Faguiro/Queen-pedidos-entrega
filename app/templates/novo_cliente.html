@@ -1,0 +1,17 @@
+<!-- templates/novo_cliente.html -->
+{% extends "base.html" %}
+{% block content %}
+  <h1>Novo Cliente</h1>
+  <form method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+    <br>
+    <label for="endereco">Endereço:</label>
+    <input type="text" id="endereco" name="endereco" required>
+    <br>
+    <label for="telefone">Telefone:</label>
+    <input type="text" id="telefone" name="telefone" required>
+    <br>
+    <button type="submit">Salvar</button>
+  </form>
+  {%  endblock %}

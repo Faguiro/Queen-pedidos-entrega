@@ -1,0 +1,29 @@
+
+<!-- templates/clientes.html -->
+{% extends "base.html" %}
+{% block content %}
+  <h1>Clientes</h1>
+  <table>
+    <thead>
+      <tr>        
+        <th>Ação</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cliente in clientes %}
+      <tr id={{ cliente.id }}>
+        <td><i class="fa fa-trash"></i><i class="fa fa-eye"></i></td>
+        <td>{{ cliente.nome }}</td>
+        <td>{{ cliente.endereco }}</td>
+        <td>{{ cliente.telefone }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p><a href="{{ url_for('novo_cliente') }}">Adicionar novo cliente</a></p>
+
+
+  {% endblock %}
